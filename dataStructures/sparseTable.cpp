@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#define MAXL 20
+#define MAXL 21
 #define MAXN 100010
 #define ll long long
 
@@ -15,7 +15,7 @@ int log(int n) {
 void build() {
 	for(int i = 0; i < n; i++) sparseTable[0][i] = elements[i];
 
-	for(int j = 1; j <= log(n); j++) {
+	for(int j = 1; j < MAXL; j++) {
 		for(int i = 0; (i + (1 << (j-1))) < n; i++) {
 			sparseTable[j][i] = min(sparseTable[j-1][i], sparseTable[j-1][i + (1 << (j-1))]);
 		}
