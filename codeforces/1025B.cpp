@@ -1,41 +1,36 @@
 #include <bits/stdc++.h>
 #define ll long long
-#define pii pair<ll, ll>
-#define MAXN 1000000
+#define pll pair<ll, ll>
+#define MAXN 2000100
 
 using namespace std;
 
-pii arr[MAXN];
+pll arr[MAXN];
+ll divisors[MAXN];
 
 int main() {
 
-  int n;
-  ll max_number = 0;
-  int i;
+  int n, index = 0;
+  ll ans = 0;
 
-  cin >> n;
+  scanf("%d", &n);
 
-  for (i = 0; i < n; i++) {
+  for (int i = 0; i < n; i++) {
     cin >> arr[i].first >> arr[i].second;
-    max_number = max(max_number, max(arr[i].first, arr[i].second));
+    divisors[i] = arr[i].first * (arr[i].second / __gcd(arr[i].first, arr[i].second));
   }
 
-  cout << max_number << endl;
-
-  bool valid;
-  for (int i = 2; i <= sqrt(max_number) && !valid; i++) {
-    cout << "i: " << i << endl;
-    valid = true;
-    for (int j = 0; j < n && valid; j++) {
-      if (arr[i].first % i != 0 && arr[i].second % i != 0) valid = false;
-    }
+  ans = __gcd(divisors[0], divisors[1]);
+  for (int i = 2; i < n; i++) {
+    ans = __gcd(ans, divisors[i]);
   }
 
-  if (!valid) {
-    cout << -1 << endl;
-  } else {
-    printf("%d\n", i);
+  for(int i = 0; i < n; i++){
+    if(__gcd(arr[i].first, ans) != 1) ans = __gcd(arr[i].first, ans);
+    if(__gcd(arr[i].second, ans) != 1) ans = __gcd(arr[i].second, ans);
   }
+
+  printf("%lld\n", ans == 1 ? -1 : ans);
 
   return 0;
 }
