@@ -6,8 +6,18 @@
 
 using namespace std;
 
-pll segtree[MAXN * 4];
+typedef struct {
+  ll frequency[9];
+} node;
+
+node segtree[MAXN * 4];
 ll lazy[MAXN * 4];
+
+void rotate(int id) {
+  for (int i = 0; i < 9; i++) {
+    segtree[id].frequency[i]
+  }
+}
 
 void propagate(int id, int l, int r) {
   if (l != r) {
@@ -76,14 +86,6 @@ int main() {
   cin >> n >> q;
 
   build(1, 1, n);
-
-  // for (int i = 0; i < q; i++) {
-  //   cin >> l >> r;
-  //   pll ans = query(1, 1, n, l, r);
-  //   cout << ans.first << ", " << ans.second << endl;;
-  // }
-
-  // cout << endl;
 
   for (int i = 0; i < q; i++) {
     cin >> x >> y;
