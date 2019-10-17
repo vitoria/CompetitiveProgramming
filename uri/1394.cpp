@@ -90,6 +90,9 @@ struct Dinic {
 
 int WALL = 50007, INI = 0, FIM = MAX-1;
 int main(){
+    int n, m, k;
     Dinic graph = Dinic(MAX, INI, FIM);
+
+
 	return 0;
 }
