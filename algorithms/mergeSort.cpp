@@ -27,13 +27,13 @@ void merge(int* arr, int start, int middle, int end) {
 
   for (int index = start; index < end; index++) {
     if (i >= (middle - start)) {
-      arr[index] = right[j]; j++;
+      arr[index] = right[j++];
     } else if (j >= (end - middle)) {
-      arr[index] = left[i]; i++;
+      arr[index] = left[i++];
     } else if (left[i] < right[j]) {
-      arr[index] = left[i]; i++;
+      arr[index] = left[i++];
     } else {
-      arr[index] = right[j]; j++;
+      arr[index] = right[j++];
     }
   }
 }
