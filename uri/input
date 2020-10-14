@@ -1,11 +1,13 @@
-I c
-I f
-I a
-I h
-INFIXA
-PREFIXA
-POSFIXA
-P z
-P h
-I g
-INFIXA
+2
+
+0 0 0 0 1
+1 1 0 0 1
+0 1 0 0 0
+0 0 0 1 1
+1 1 0 0 0
+ 
+0 0 0 0 1
+1 1 0 0 1
+0 1 0 0 0
+0 0 1 1 1
+1 1 0 0 0
