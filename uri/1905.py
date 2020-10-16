@@ -1,20 +1,26 @@
 n = int(input())
+board = []
 
-def solve(b, x, y):
+def solve(x, y):
   if x == 4 and y == 4:
     return True
-  if x > 4 or y > 4 or x < 0 or y < 0 or b[x][y] != 0:
+  if x > 4 or y > 4 or x < 0 or y < 0 or board[x][y] != 0:
     return False
-  b[x][y] = 1
-  return solve(b, x-1, y) or solve(b, x, y-1) or solve(b, x+1, y) or solve(b, x, y+1)
+  board[x][y] = 1
+  return solve(x-1, y) or solve(x, y-1) or solve(x+1, y) or solve(x, y+1)
 
 for i in range(n):
-  board = []
-  input()
-  for i in range(5):
-    board.append(list(map(int, input().split())))
-  
-  if solve(board, 0, 0):
+  count = 0
+  while count < 5:
+    inputs = input().split()
+    if len(inputs) < 5:
+      count = count
+    else:
+      board.append(list(map(int, inputs)))
+      count = count + 1
+  if solve(0, 0):
     print('COPS')
   else:
     print('ROBBERS')
+
+  board.clear()
