@@ -2,31 +2,6 @@
 
 using namespace std;
 
-// int deleteProducts(vector<int> ids, int m) {
-//   map<int, int> freq;
-//   int unique = 0, multiple = 0, canRemove = 0;
-//   int ans = 0;
-
-//   for (int i = 0; i < ids.size(); i++) {
-//     freq[ids[i]]++;
-//   }
-
-//   for (auto item : freq) {
-//     if (item.second == 1) {
-//       unique++;
-//     } else {
-//       multiple++;
-//       canRemove += item.second - 1;
-//     }
-//   }
-
-//   if (unique >= m) {
-//     return multiple + (m - unique);
-//   }
-
-//   return (unique + multiple) - (m - canRemove);
-// }
-
 int deleteProducts(vector<int> ids, int m) { 
     vector<pair<int, int>> nums; 
     unordered_map<int, int> freq; 
