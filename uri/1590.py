@@ -1,5 +1,3 @@
-from math import log, floor
-
 tests = int(input())
 
 for i in range(tests):
@@ -17,16 +15,9 @@ for i in range(tests):
 
     if len(candidates) >= k:
       nums = candidates
+      ans = ans + (1<<base)
 
     base = base - 1
-
-  nums.sort()
-  
-  for num in nums:
-    if ans == 0:
-      ans = num
-    else:
-      ans = ans & num
 
   print(ans)
 
