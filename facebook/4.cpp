@@ -11,7 +11,7 @@ using namespace std;
  *  2. INTEGER_ARRAY sizes
  */
 
-int dp [1001];
+int dp [1e6 + 1];
 int MAXN = 1e9;
 int getUmbrellas(int requirement, vector<int> sizes) {  
   for(int i = 1; i <= requirement; i++) dp[i] = MAXN;

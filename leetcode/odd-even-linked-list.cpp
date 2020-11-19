@@ -10,21 +10,32 @@ struct ListNode {
   ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
-ListNode* swapPairs(ListNode* head) {
-  if (head == nullptr || head.next == nullptr) {
+ListNode* oddEvenList(ListNode* head) {
+
+  if (head == nullptr || head->next ==nullptr) {
     return head;
   }
 
-  ListNode* tmp = swapPairs(head->next->next);
-  ListNode* aux = head->next;
-  head->next = tmp;
-  aux->next = head;
-  return aux;
-} 
+  ListNode* ans = head, curr = head;
+  ListNode* odd;
+
+
+  while (curr.next != nullptr && curr.next.next != nullptr)
+
+}
 
 int main() {
 
 
 
+
   return 0;
 }
+
+
+/**
+
+1 -> 2 -> 3 -> 4 -> 5
+o         
+
+**/
